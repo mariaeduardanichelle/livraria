@@ -23,4 +23,4 @@ class LivroSerializer(ModelSerializer):
     class Meta:
         model = Livro
         fields = "__all__"
-        # depth = 1
+        depth = 1
