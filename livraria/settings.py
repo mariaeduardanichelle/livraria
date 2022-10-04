@@ -124,7 +124,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 #     ],
 # }
 
-AUTH_USER_MODEL = "core.Usuario"
 
 # Media: upload de imagens e documentos
 MEDIA_URL = "http://localhost:8000/media/"
