@@ -8,9 +8,9 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-
 from rest_framework.routers import DefaultRouter
-from core.views import CategoriaViewSet, EditoraViewSet, AutorViewSet, LivroViewSet
+
+from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet
 from media.router import router as media_router
 
 router = DefaultRouter()
