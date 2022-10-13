@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "drf_spectacular",
     "rest_framework",
     "media",
     "core",
@@ -115,14 +116,22 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# REST_FRAMEWORK = {
-#     # 'DEFAULT_PERMISSION_CLASSES': [
-#     #     'rest_framework.permissions.IsAuthenticated',
-#     # ],
-#     "DEFAULT_PERMISSION_CLASSES": [
-#         "rest_framework.permissions.DjangoModelPermissions",
-#     ],
-# }
+
+REST_FRAMEWORK = {
+      'DEFAULT_PERMISSION_CLASSES': [
+          'rest_framework.permissions.IsAuthenticated',
+      ],
+     "DEFAULT_PERMISSION_CLASSES": [
+         "rest_framework.permissions.DjangoModelPermissions",
+     ],
+     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+ }
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Livraria API",
+    "DESCRIPTION": "API para gerenciamento de livraria, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
 
 
 # Media: upload de imagens e documentos
