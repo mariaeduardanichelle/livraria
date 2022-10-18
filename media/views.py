@@ -1,10 +1,11 @@
 from rest_framework import mixins, parsers, viewsets
-
+# from rest_framework.permissions import IsAuthenticated
 from media.models import Document, Image
 from media.serializers import DocumentUploadSerializer, ImageUploadSerializer
 
 
 class CreateViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    # permission_classes = [IsAuthenticated]
     pass
 
 
