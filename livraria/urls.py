@@ -23,6 +23,7 @@ router.register(r'categorias', CategoriaViewSet)
 router.register(r'editoras', EditoraViewSet)
 router.register(r'autores', AutorViewSet)
 router.register(r'livros', LivroViewSet)
+router.register(r'autor', AutorViewSet)
 
 urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
