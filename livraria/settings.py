@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
+    "rest_framework_simplejwt",
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "drf_spectacular",
@@ -124,6 +125,9 @@ REST_FRAMEWORK = {
      "DEFAULT_PERMISSION_CLASSES": [
          "rest_framework.permissions.DjangoModelPermissions",
      ],
+     "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
      "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
  }
 
