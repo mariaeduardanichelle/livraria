@@ -1,0 +1,23 @@
+[
+{
+  "model": "core.usuario",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$uvmKOLE98TnYk79oNzdGLb$ZEphLyBXXMFwG4jwaDjmLr7gBad66p+5FrpS8bpli64=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "maria",
+    "first_name": "",
+    "last_name": "",
+    "email": "madunichelle@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-10-20T16:22:58.430Z",
+    "cpf": "",
+    "telefone": null,
+    "data_nascimento": null,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
