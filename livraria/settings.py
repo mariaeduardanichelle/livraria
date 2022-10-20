@@ -136,7 +136,7 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API para gerenciamento de livraria, incluindo endpoints e documentação.",
     "VERSION": "1.0.0",
 }
-AUTH_USER_MODEL = "core.Usuario"
+
 
 # Media:  upload de imagens e documentos
 MEDIA_URL = "http://localhost:8000/media/"
