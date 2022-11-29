@@ -12,18 +12,8 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 DATABASES = {'default': env.db()}
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-2q92d!!zdr7cj6z--jzi!au1+m!8au$b=781v^_gvez_#3ruqx"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -72,18 +62,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "livraria.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -128,17 +106,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 AUTH_USER_MODEL = "core.Usuario"
 
 REST_FRAMEWORK = {
-      'DEFAULT_PERMISSION_CLASSES': [
-          "rest_framework.permissions.IsAuthenticated",
-      ],
-     "DEFAULT_PERMISSION_CLASSES": [
-         "rest_framework.permissions.DjangoModelPermissions",
-     ],
-     "DEFAULT_AUTHENTICATION_CLASSES": (
+    'DEFAULT_PERMISSION_CLASSES': [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
- }
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "Livraria API",
