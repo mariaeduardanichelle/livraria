@@ -4,8 +4,8 @@ version = "1.0.0"
 description = "Uma API REST de uma livraria feita com Django e Django REST Framework."
 authors = [{ name = "Marco André Mendes", email = "marcoandre@gmail.com" }]
 dependencies = [
-    'dj-database-url>=2.1.0',
-    'django-cloudinary-storage>=0.3.0',
+    "dj-database-url>=2.3.0",
+    "django-cloudinary-storage>=0.3.0",
     'django-cors-headers>=4.3.0',
     'django-extensions>=3.2.3',
     'django-filter>=23.3',
@@ -21,8 +21,7 @@ dependencies = [
     'psycopg2-binary>=2.9.9',
     'pydotplus>=2.0.2',
     'python-dotenv>=1.0.0',
-    "python-magic-bin>=0.4.14; sys_platform == \"win32, darwin\"",
-    "python-magic>=0.4.27; sys_platform == \"linux\"",
+    "python-magic-bin>=0.4.14",
     'setuptools>=68.2.2',
     'uvicorn>=0.29.0',
     'whitenoise[brotli]>=6.6.0',
