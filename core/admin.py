@@ -1,24 +1,19 @@
-"""
-Django admin customization.
-"""
-
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core.models import Autor, Categoria, Editora, Livro, User
-
-from core import models
-
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
-
     ordering = ["id"]
     list_display = ["email", "name"]
+    
     fieldsets = (
         (None, {"fields": ("email", "password")}),
-        (_("Personal Info"), {"fields": ("name", "passage_id")}),
+        (_("Personal Info"), {"fields": ("name", "foto")}),
         (
             _("Permissions"),
             {
@@ -33,7 +28,9 @@ class UserAdmin(BaseUserAdmin):
         (_("Groups"), {"fields": ("groups",)}),
         (_("User Permissions"), {"fields": ("user_permissions",)}),
     )
+    
     readonly_fields = ["last_login"]
+    
     add_fieldsets = (
         (
             None,
@@ -52,12 +49,17 @@ class UserAdmin(BaseUserAdmin):
         ),
     )
 
-# admin.site.register(models.User, UserAdmin)
-# admin.site.register(models.Categoria)
-# admin.site.register(models.Editora)
-# admin.site.register(models.Autor)
-# admin.site.register(models.Livro)
+    def save_model(self, request, obj, form, change):
+        try:
+            # Chama o método original para salvar o usuário
+            super().save_model(request, obj, form, change)
+        except IntegrityError as e:
+            raise
 
+# Registre o User no Admin (não duplicar)
+admin.site.register(User, UserAdmin)
+
+# Registre as outras models
 @admin.register(Autor)
 class AutorAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email')
