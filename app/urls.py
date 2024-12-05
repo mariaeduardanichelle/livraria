@@ -18,7 +18,7 @@ from uploader.router import router as uploader_router
 router = DefaultRouter()
 
 router.register(r"autores", AutorViewSet)
-router.register(r"categorias", CategoriaViewSet) 
+router.register(r"categorias", CategoriaViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r"livros", LivroViewSet)
 router.register(r"usuarios", UserViewSet, basename="usuarios")
@@ -45,4 +45,3 @@ urlpatterns = [
     path("api/", include(router.urls)),
 ]
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
-

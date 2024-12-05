@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "django_filters",
     "drf_spectacular",
+    "drf_spectacular_sidecar",
     "rest_framework",
     "rest_framework_simplejwt",
     "uploader",
@@ -138,18 +139,19 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "<PROJETO> API",
+    "TITLE": "Livraria API",
     "DESCRIPTION": "API para o projeto <descreva aqui seu projeto>.",
     "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
 }
 
 AUTH_USER_MODEL = "core.User"
 
 REST_FRAMEWORK = {
     # "DEFAULT_AUTHENTICATION_CLASSES": ("core.authentication.TokenAuthentication",),  # Autenticação no passage.id
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ),  # Permissão total para usuários autenticados
+    # "DEFAULT_PERMISSION_CLASSES": (
+    #     "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    # ),  # Permissão total para usuários autenticados
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",), # Permissões através dos grupos do Django
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly", ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
