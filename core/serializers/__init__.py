@@ -3,4 +3,4 @@ from .categoria import CategoriaSerializer
 from .editora import EditoraSerializer
 from .user import UserSerializer
 from .livro import LivroDetailSerializer, LivroSerializer, LivroListSerializer
-from .compra import CompraSerializer
+from .compra import CompraSerializer, ItensCompraSerializer
