@@ -6,6 +6,10 @@ from core.models import Autor, Categoria, Editora, Livro, User
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
+from core.models import Compra
+
+admin.site.register(Compra)
+
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
     ordering = ["id"]
