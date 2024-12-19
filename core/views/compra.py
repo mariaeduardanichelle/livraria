@@ -20,6 +20,11 @@ from core.serializers import (
 class CompraViewSet(ModelViewSet):
     queryset = Compra.objects.all()
     serializer_class = CompraSerializer
+    filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
+    filterset_fields = ["usuario__email", "status", "data"]
+    search_fields = ["usuario__email"]
+    ordering_fields = ["usuario__email", "status", "data"]
+    ordering = ["-data"]
 
     def get_queryset(self):
         usuario = self.request.user
