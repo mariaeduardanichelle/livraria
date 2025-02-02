@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from core.models import Autor, Categoria, Editora, Livro, User, Compra, ItensCompra
+from core.models import Autor, Categoria, Editora, Livro, User, Compra, ItensCompra, Favoritos
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
@@ -104,3 +104,8 @@ class CompraAdmin(admin.ModelAdmin):
     ordering = ("usuario", "status")
     list_per_page = 25
     inlines = [ItensCompraInline]
+
+@admin.register(Favoritos)
+class FavoritosAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'livro', 'data_adicionado')
+    search_fields = ('usuario__email', 'livro__titulo')
