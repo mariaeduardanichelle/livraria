@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "django_filters",
     "drf_spectacular",
-    "drf_spectacular_sidecar",
+    # "drf_spectacular_sidecar",
     "rest_framework",
     "rest_framework_simplejwt",
     "uploader",

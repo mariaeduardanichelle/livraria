@@ -5,7 +5,6 @@ from drf_spectacular.extensions import OpenApiAuthenticationExtension
 from drf_spectacular.plumbing import build_bearer_security_scheme_object
 from passageidentity import Passage, PassageError
 
-# from passageidentity.openapi_client.models import UserInfo
 from rest_framework import authentication
 from rest_framework.exceptions import AuthenticationFailed
 
@@ -55,7 +54,6 @@ class TokenAuthentication(authentication.BaseAuthentication):
         try:
             psg_user_id: str = psg.authenticateRequest(request)
         except PassageError as e:
-            # print(e)
             raise AuthenticationFailed(e.message) from e
 
         return psg_user_id
